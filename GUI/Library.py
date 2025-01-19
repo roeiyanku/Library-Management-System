@@ -33,11 +33,11 @@ class Multiple:
         password_entry = Entry(self.root)
         password_entry.place(x=150, y=100)
 
-        login_submit = Button(self.root, text="Submit",
+        login_Login = Button(self.root, text="Login",
                               command=lambda: logger.login_Function(username_entry, password_entry, self))
 
         # addlog function here
-        login_submit.place(x=220, y=400)
+        login_Login.place(x=220, y=400)
 
     def librarian_page(self):
         for widget in self.root.winfo_children():
