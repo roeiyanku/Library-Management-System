@@ -4,35 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Customer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_book.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_librarian.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" name="Changes" comment="Second Commit">
+      <change afterPath="$PROJECT_DIR$/tests/test_gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book_Management/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book_Management/available_book.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book_Management/books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book_Management/loaned_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/available_book.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book_Management/waiting_list.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/loaned_books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Library.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Library.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/waiting_list.csv" afterDir="false" />
-    </list>
-    <list id="efa481c3-9cd2-42e5-bef1-f44314b016d5" name="Changes by USER" comment="">
-      <change afterPath="$PROJECT_DIR$/models/Librarian.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_file_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_library.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book_Management/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Book_Management/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Book_Management/file_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Librarian.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Library.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Librarian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/waiting_list.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_file_manager.py" afterDir="false" />
     </list>
+    <list id="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" name="Changes by Matanel" comment="">
+      <change beforePath="$PROJECT_DIR$/Book_Management/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Book_Management/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_book.py" afterDir="false" />
+    </list>
+    <list id="efa481c3-9cd2-42e5-bef1-f44314b016d5" name="Changes by USER" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -50,13 +38,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/models/Book.py">
+    <file path="$PROJECT_DIR$/Book_Management/file_manager.py">
       <ranges>
-        <range start1="7" end1="8" start2="7" end2="8" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="11" end1="12" start2="11" end2="11" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="18" end1="18" start2="17" end2="20" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="20" end1="24" start2="22" end2="27" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="36" end1="44" start2="39" end2="39" changelist="efa481c3-9cd2-42e5-bef1-f44314b016d5" />
+        <range start1="4" end1="5" start2="4" end2="5" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="6" end1="12" start2="6" end2="10" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="27" end1="28" start2="25" end2="26" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="34" end1="34" start2="32" end2="50" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="37" end1="45" start2="53" end2="53" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="50" end1="50" start2="58" end2="59" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="51" end1="57" start2="60" end2="62" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="62" end1="66" start2="67" end2="67" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="67" end1="75" start2="68" end2="68" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
       </ranges>
     </file>
   </component>
@@ -73,11 +65,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for test_book.TestBook.executor": "Run",
+    "Python.GUI.executor": "Run",
     "Python.Librarian.executor": "Run",
     "Python.Library.executor": "Run",
     "Python.logger.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/famen/Desktop/Coding Projects/Hamming-Net-Project"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -88,6 +83,28 @@
       <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system\Book_Management\data" />
       <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system\Book_Management" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Python tests for test_book.TestBook" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Library-management-system" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_book.TestBook&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_book.TestBook" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -113,7 +130,31 @@
       <option name="project" value="LOCAL" />
       <updated>1736704573343</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Second Commit">
+      <option name="closed" value="true" />
+      <created>1736876302393</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736876302393</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Second Commit">
+      <option name="closed" value="true" />
+      <created>1736876470995</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736876470995</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Second Commit">
+      <option name="closed" value="true" />
+      <created>1736876520881</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736876520881</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +170,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Second Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second Commit" />
   </component>
 </project>

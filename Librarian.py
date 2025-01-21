@@ -1,34 +1,86 @@
+import hashlib
 from datetime import datetime
+import os
+import csv
+
+import models
+from Book_Management import file_manager
+from models.Book import Book
+
 
 class Librarian:
     # Initialize the librarian department with a file manager.
     def __init__(self, file_manager):
         self.file_manager = file_manager
 
+    @staticmethod
+    def register(username, password, role, full_name, email, phone_number):
+        # Makeing sure user's password is secure:
+        h = hashlib.new("SHA256")
+        h.update(password.encode())
+        password_hash = h.hexdigest()
 
-    def addUser(self,userName,  ):
+        csv_path = os.path.join('../data/users.csv')
 
-    def add_book(self, librarian, book):
-        if not librarian.is_librarian():
-            raise PermissionError("Only librarians can add books.")
+        # User details as a dictionary
+        user_details = {
+            "username": username,
+            "password": password_hash,
+            "role": role,
+            "full_name": full_name,
+            "email": email,
+            "phone_number": phone_number
+        }
 
-        books = self.file_manager.get_books()
+        # Check if the file exists; if not, create it with headers
+        if not os.path.exists(csv_path):
+            with open(csv_path, mode="w", newline="", encoding="utf-8") as file:
+                writer = csv.writer(file)
+                writer.writerow(["Username", "Password", "Role", "Full Name", "Email", "Phone Number"])  # Header
 
-        # Check for duplicates by ID
-        if any(b["id"] == book.book_id for b in books):
-            raise ValueError(f"Book with ID {book.book_id} already exists.")
+        # Append the new user's data
+        with open(csv_path, mode="a", newline="", encoding="utf-8") as file:
+            writer = csv.writer(file)
+            writer.writerow([
+                user_details["username"],
+                user_details["password"],
+                user_details["role"],
+                user_details["full_name"],
+                user_details["email"],
+                user_details["phone_number"]
+            ])
+    def writelog(message: str):
+        file_manager.write_to_log(message)
+    @staticmethod
+    def add_book(title, author, is_loaned, copies, genre, year, popularity=0):
+        try:
+            books = file_manager.get_books()
+            # Generate a unique book ID
+            book_ID = Book.get_next_ID()
 
-        # add new book
-        books.append({
-            "id": book.book_id,
-            "title": book.title,
-            "author": book.author,
-            "copies": book.copies,
-            "genre": book.genre,
-            "year": book.year,
-        })
-        self.file_manager.sync_books(books, [], [])
-        print(f"Book '{book.title}' added successfully.")
+            # Check for duplicates by ID
+            for book in books:
+                if book["title"] == title and book["author"] == author:
+                    book["copies"] += copies
+                    file_manager.sync_books(books)  # Save the updated list to the CSV
+                    return
+
+            # Add a new book if no duplicate is found
+            new_book = {
+                "id": book_ID,
+                "title": title,
+                "author": author,
+                "is_loaned": is_loaned,
+                "copies": copies,
+                "genre": genre,
+                "year": year,
+                "popularity": popularity,
+            }
+            books.append(new_book)
+            file_manager.sync_books(books)  # Save the new book list to the CSV
+            file_manager.writelog("book added successfully")
+        except Exception:
+            file_manager.writelog("book added fail")
 
     def remove_book(self, librarian, book_id):
         if not librarian.is_librarian():
@@ -45,7 +97,7 @@ class Librarian:
         self.file_manager.sync_books(books, [], [])
         print(f"Book with ID {book_id} removed successfully.")
 
-    #Update existing book details.
+    # Update existing book details.
     def update_book(self, librarian, book_id, **kwargs):
         if not librarian.is_librarian():
             raise PermissionError("Only librarians can update books.")
@@ -64,35 +116,4 @@ class Librarian:
 
         self.file_manager.sync_books(books, [], [])
         print(f"Book with ID {book_id} updated successfully.")
-
-
-     # Add a user to the waiting list.
-    def manage_waiting_list(self, book_id, user):
-        # Get available books
-        available_books = self.file_manager.get_available_books()
-
-        # Check if the book is available
-        book = next((b for b in available_books if b["id"] == book_id), None)
-        if book and int(book["copies"]) > 0:
-            print(f"Book with ID {book_id} is available. No need for a waiting list.")
-            return
-
-        # Get the current waiting list
-        waiting_list = self.file_manager.get_waiting_list()
-
-        # Check if the user is already in the waiting list
-        if any(entry["book_id"] == book_id and entry["username"] == user.username for entry in waiting_list):
-            print(f"User {user.username} is already in the waiting list for book ID {book_id}.")
-            return
-
-        # Add user to the waiting list
-        waiting_list.append({
-            "book_id": book_id,
-            "username": user.username,
-            "added_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        })
-
-        # Sync the updated waiting list
-        self.file_manager.sync_waiting_list(waiting_list)
-        print(f"User {user.username} added to the waiting list for book ID {book_id}.")
 
