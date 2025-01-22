@@ -7,8 +7,7 @@ import pandas as pd
 from utils import logger
 import csv
 import os
-
-
+import json
 
 
 class Multiple:
@@ -41,7 +40,7 @@ class Multiple:
         password_entry.place(x=150, y=100)
 
         login_Login = Button(self.root, text="Login",
-                              command=lambda: logger.login_Function(username_entry, password_entry, self))
+                             command=lambda: logger.login_Function(username_entry, password_entry, self))
 
         # addlog function here
         login_Login.place(x=220, y=400)
@@ -79,7 +78,7 @@ class Multiple:
 
         # Logout Button
         logout_button = Button(self.root, text="Logout", command=self.home_page)
-        logout_button.place(x=220, y=340)
+        logout_button.place(x=220, y=420)
 
         # Register Button
         register_button = Button(self.root, text="Register", command=self.register_page)
@@ -87,8 +86,7 @@ class Multiple:
 
         # Popular Books Button
         popular_books_button = Button(self.root, text="Popular Books", command=self.popular_books_page)
-        popular_books_button.place(x=220, y=420)
-
+        popular_books_button.place(x=220, y=340)
 
     def customer_page(self):
         for widget in self.root.winfo_children():
@@ -176,26 +174,70 @@ class Multiple:
             genre_entry.get(), year_entry.get(), book_id_entry.get())))
         librarian_submit.pack(pady=10)
 
-
     def remove_book_page(self):
         for widget in self.root.winfo_children():
             widget.destroy()
 
-        title = Label(self.root, text="remove_page", bg="powderblue", font=('bold', '25'))
+        title = Label(self.root, text="Remove Book", bg="powderblue", font=('bold', '25'))
         title.pack()
 
         back_button = Button(self.root, text="Back", command=self.librarian_page)
         back_button.place(x=10, y=10)
 
+        # Entry label
+        book_id_label = Label(self.root, text="Enter Book ID to remove:", font=('bold', 12))
+        book_id_label.pack(pady=10)
+
+        # Entry field for Book ID
+        book_id_entry = Entry(self.root, width=30, font=('bold', 12))
+        book_id_entry.pack(pady=10)
+
+        submit_button = Button(self.root, text="Submit", command=lambda: Librarian.remove_book(
+            book_id_entry.get()), font=('bold', 12))
+        submit_button.pack(pady=10)
+
     def search_book_page(self):
+        # Clear the previous widgets
         for widget in self.root.winfo_children():
             widget.destroy()
 
-        title = Label(self.root, text="search_book_page", bg="powderblue", font=('bold', '25'))
+        # Page Title
+        title = Label(self.root, text="Search Book Page", bg="powderblue", font=('bold', 25))
         title.pack()
 
+        # Back Button
         back_button = Button(self.root, text="Back", command=self.librarian_page)
         back_button.place(x=10, y=10)
+
+        # Search Entry Label and Field
+        search_label = Label(self.root, text="Search:", font=('bold', 12))
+        search_label.place(x=20, y=70)
+        search_entry = Entry(self.root, width=40)
+        search_entry.place(x=100, y=70)
+
+        # Dropdown Menu for Search Criteria
+        search_criteria_label = Label(self.root, text="Search By:", font=('bold', 12))
+        search_criteria_label.place(x=20, y=110)
+        search_criteria = StringVar()
+        search_criteria.set("Title")  # Default option
+        dropdown = ttk.Combobox(self.root, textvariable=search_criteria, state="readonly",
+                                values=["Title", "Author", "Genre", "Year", "Book ID", "Availability"])
+        dropdown.place(x=100, y=110)
+
+        # Search Button
+        search_button = Button(self.root, text="Search")
+        search_button.place(x=400, y=110)
+
+        # Treeview for Displaying Search Results
+        columns = ("Title", "Author", "Genre", "Year", "Book ID", "Availability")
+        tree = ttk.Treeview(self.root, columns=columns, show="headings", height=15)
+
+        # Define Columns
+        for col in columns:
+            tree.heading(col, text=col)
+            tree.column(col, width=120)
+
+        tree.place(x=20, y=150)
 
     def view_books_page(self):
         for widget in self.root.winfo_children():
@@ -208,7 +250,7 @@ class Multiple:
         back_button.place(x=10, y=10)
 
         # Create the list itself
-        columns = ("title", "author", "is_loaned", "copies", "genre", "year", "book_ID")
+        columns = ("title", "author", "is_loaned", "copies", "genre", "year", "book_ID", "popularity", "availability")
         tree = ttk.Treeview(self.root, columns=columns, show="headings")
         tree.pack(fill="both", expand=True, pady=20)
 
@@ -216,7 +258,6 @@ class Multiple:
         for col in columns:
             tree.heading(col, text=col)
             tree.column(col, anchor="center", width=100)
-
 
         csv_path = os.path.join('../data/books.csv')
 
@@ -236,21 +277,45 @@ class Multiple:
         for widget in self.root.winfo_children():
             widget.destroy()
 
-        title = Label(self.root, text="lend_books_page", bg="powderblue", font=('bold', '25'))
+        title = Label(self.root, text="Lend Book", bg="powderblue", font=('bold', '25'))
         title.pack()
 
         back_button = Button(self.root, text="Back", command=self.librarian_page)
         back_button.place(x=10, y=10)
+
+        # Entry label
+        book_id_label = Label(self.root, text="Enter Book ID to lend:", font=('bold', 12))
+        book_id_label.pack(pady=10)
+
+        # Entry field for Book ID
+        book_id_entry = Entry(self.root, width=30, font=('bold', 12))
+        book_id_entry.pack(pady=10)
+
+        submit_button = Button(self.root, text="Submit", command=lambda: Librarian.lend_book(
+            book_id_entry.get()), font=('bold', 12))
+        submit_button.pack(pady=10)
 
     def return_book_page(self):
         for widget in self.root.winfo_children():
             widget.destroy()
 
-        title = Label(self.root, text="view_books_page", bg="powderblue", font=('bold', '25'))
+        title = Label(self.root, text="Return Book", bg="powderblue", font=('bold', '25'))
         title.pack()
 
         back_button = Button(self.root, text="Back", command=self.librarian_page)
         back_button.place(x=10, y=10)
+
+        # Entry label
+        book_id_label = Label(self.root, text="Enter Book ID to Return:", font=('bold', 12))
+        book_id_label.pack(pady=10)
+
+        # Entry field for Book ID
+        book_id_entry = Entry(self.root, width=30, font=('bold', 12))
+        book_id_entry.pack(pady=10)
+
+        submit_button = Button(self.root, text="Submit", command=lambda: Librarian.return_book(
+            book_id_entry.get()), font=('bold', 12))
+        submit_button.pack(pady=10)
 
     def register_page(self):
         for widget in self.root.winfo_children():
@@ -316,18 +381,30 @@ class Multiple:
         # Read data from books.csv
         csv_path = os.path.join('../data/books.csv')
         try:
-            # Load and process data using pandas
+            # Reading the CSV file
             df = pd.read_csv(csv_path)
 
-            # Select only relevant columns and process top 10 books by copies
-            top_10 = df[['title', 'copies']].nlargest(10, 'popularity')
-            top_10.reset_index(drop=True, inplace=True)
-            top_10['Rank'] = range(1, len(top_10) + 1)
-            top_10 = top_10[['Rank', 'title']]
 
-            # Insert data into the Treeview
+            # Check if required columns exist
+            required_columns = ['title', 'popularity']
+            for col in required_columns:
+                if col not in df.columns:
+                    raise KeyError(f"Column '{col}' not found in the CSV file.")
+
+
+
+            # Ensure proper column parsing
+            df = df[['title', 'popularity']]
+
+            # Select only relevant columns and process top 10 books by copies
+            top_10 = df.nlargest(10, 'popularity').reset_index(drop=True)
+            top_10['Rank'] = range(1, len(top_10) + 1)
+
+
+            # Insert data to treeview
+
             for _, row in top_10.iterrows():
-                tree.insert("", "end", values=row)
+                tree.insert("", "end", values=(row['Rank'], row['title']))
 
             tree.pack(pady=20)
 
@@ -336,16 +413,6 @@ class Multiple:
                                 font=('Arial', 14))
             error_label.pack(pady=10)
 
-
-def lend_book_page(self):
-        for widget in self.root.winfo_children():
-            widget.destroy()
-
-        title = Label(self.root, text="lend_books_page", bg="powderblue", font=('bold', '25'))
-        title.pack()
-
-        back_button = Button(self.root, text="Back", command=self.librarian_page)
-        back_button.place(x=10, y=10)
 
 
 

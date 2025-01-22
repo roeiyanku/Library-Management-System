@@ -4,21 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" name="Changes" comment="Second Commit">
-      <change afterPath="$PROJECT_DIR$/tests/test_gui.py" afterDir="false" />
+    <list default="true" id="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" name="Changes" comment="Third Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book_Management/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Book_Management/file_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Library.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Librarian.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/waiting_list.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
     </list>
     <list id="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" name="Changes by Matanel" comment="">
       <change beforePath="$PROJECT_DIR$/Book_Management/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Book_Management/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Librarian.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_librarian.py" afterDir="false" />
     </list>
     <list id="efa481c3-9cd2-42e5-bef1-f44314b016d5" name="Changes by USER" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,17 +39,39 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Book_Management/file_manager.py">
+    <file path="$PROJECT_DIR$/models/Book.py">
       <ranges>
         <range start1="4" end1="5" start2="4" end2="5" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="6" end1="12" start2="6" end2="10" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="27" end1="28" start2="25" end2="26" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="34" end1="34" start2="32" end2="50" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="37" end1="45" start2="53" end2="53" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="50" end1="50" start2="58" end2="59" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="51" end1="57" start2="60" end2="62" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="62" end1="66" start2="67" end2="67" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="67" end1="75" start2="68" end2="68" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="7" end1="9" start2="7" end2="8" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="11" end1="13" start2="10" end2="12" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="15" end1="16" start2="14" end2="15" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="19" end1="20" start2="18" end2="19" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="21" end1="22" start2="20" end2="21" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="23" end1="24" start2="22" end2="22" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="30" end1="33" start2="28" end2="28" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="34" end1="35" start2="29" end2="30" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="39" end1="55" start2="34" end2="37" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="56" end1="97" start2="38" end2="44" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="98" end1="102" start2="45" end2="46" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Librarian.py">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="2" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="51" end1="52" start2="52" end2="53" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="53" end1="53" start2="54" end2="56" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="54" end1="55" start2="57" end2="58" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="57" end1="60" start2="60" end2="60" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="63" end1="64" start2="63" end2="64" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="67" end1="78" start2="67" end2="69" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="84" end1="87" start2="75" end2="76" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="89" end1="92" start2="78" end2="79" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="93" end1="98" start2="80" end2="90" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="100" end1="104" start2="92" end2="93" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="106" end1="110" start2="95" end2="114" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="111" end1="115" start2="115" end2="116" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="116" end1="118" start2="117" end2="132" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="119" end1="119" start2="133" end2="169" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
       </ranges>
     </file>
   </component>
@@ -66,6 +89,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python tests.Python tests for test_book.TestBook.executor": "Run",
+    "Python tests.Python tests for test_book.TestBook.test_add_copy.executor": "Run",
+    "Python tests.Python tests for test_file_manager.TestLibrarian.executor": "Run",
+    "Python tests.Python tests for test_librarian.TestLibrarian.executor": "Run",
+    "Python.Book.executor": "Run",
     "Python.GUI.executor": "Run",
     "Python.Librarian.executor": "Run",
     "Python.Library.executor": "Run",
@@ -84,7 +111,29 @@
       <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system\Book_Management" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.GUI">
+    <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Library-management-system" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GUI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI/GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_book.TestBook" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Library-management-system" />
       <option name="ENV_FILES" value="" />
@@ -100,8 +149,57 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_book.TestBook.test_add_copy" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Library-management-system" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_book.TestBook.test_add_copy&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_file_manager.TestLibrarian" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Library-management-system" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_file_manager.TestLibrarian&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_librarian.TestLibrarian" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Library-management-system" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_librarian.TestLibrarian&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GUI" />
+        <item itemvalue="Python tests.Python tests for test_librarian.TestLibrarian" />
+        <item itemvalue="Python tests.Python tests for test_file_manager.TestLibrarian" />
+        <item itemvalue="Python tests.Python tests for test_book.TestBook.test_add_copy" />
         <item itemvalue="Python tests.Python tests for test_book.TestBook" />
       </list>
     </recent_temporary>
@@ -154,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736876520881</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Third Commit">
+      <option name="closed" value="true" />
+      <created>1737482304734</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737482304734</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +277,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Second Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second Commit" />
+    <MESSAGE value="Third Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third Commit" />
   </component>
 </project>

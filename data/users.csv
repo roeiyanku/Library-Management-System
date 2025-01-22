@@ -2,3 +2,6 @@ userName,password,role, full_name,  email, phone_number
 Roei,e49d63b2a8a78f048bafc4b4590029603a5a4165ee8bf98af15d62f24cd83479,librarian, Roei lastname, roei@gmail.com , 0521234567
 Matanel,e49d63b2a8a78f048bafc4b4590029603a5a4165ee8bf98af15d62f24cd83479,customer , Matanel lastname, matanel@gmail.com, 0521231231
 TheRealPassword, r3, customer
+User,ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb,librarian,User User,user@example.com,123456789
+User,ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb,librarian,User User,user@example.com,123456789
+User,ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb,librarian,User User,user@example.com,123456789
