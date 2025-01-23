@@ -1,13 +1,11 @@
-import tkinter
 from tkinter import ttk
 from tkinter import *
 
-from Librarian import Librarian
+from Management.Librarian import Librarian
 import pandas as pd
 from utils import logger
 import csv
 import os
-import json
 
 
 class Multiple:
@@ -138,11 +136,6 @@ class Multiple:
         author_entry = Entry(self.root, font=('Arial', 10))
         author_entry.pack(fill='x', padx=20, pady=5)
 
-        # Is Loaned Label and Entry
-        is_loaned_label = Label(self.root, text="Is Loaned (Yes/No):", bg="powderblue", font=('Arial', 10))
-        is_loaned_label.pack(anchor="w", padx=20, pady=5)
-        is_loaned_entry = Entry(self.root, font=('Arial', 10))
-        is_loaned_entry.pack(fill='x', padx=20, pady=5)
 
         # Copies Label and Entry
         copies_label = Label(self.root, text="Copies:", bg="powderblue", font=('Arial', 10))
@@ -162,16 +155,11 @@ class Multiple:
         year_entry = Entry(self.root, font=('Arial', 10))
         year_entry.pack(fill='x', padx=20, pady=5)
 
-        # Book ID Label and Entry
-        book_id_label = Label(self.root, text="Book ID:", bg="powderblue", font=('Arial', 10))
-        book_id_label.pack(anchor="w", padx=20, pady=5)
-        book_id_entry = Entry(self.root, font=('Arial', 10))
-        book_id_entry.pack(fill='x', padx=20, pady=5)
 
         # Submit button
         librarian_submit = Button(self.root, text="Submit", command=lambda: Librarian.add_book((
-            book_entry.get(), author_entry.get(), is_loaned_entry.get(), copies_entry.get(),
-            genre_entry.get(), year_entry.get(), book_id_entry.get())))
+            book_entry.get(), author_entry.get(), copies_entry.get(),
+            genre_entry.get(), year_entry.get() )))
         librarian_submit.pack(pady=10)
 
     def remove_book_page(self):
@@ -239,6 +227,8 @@ class Multiple:
 
         tree.place(x=20, y=150)
 
+
+
     def view_books_page(self):
         for widget in self.root.winfo_children():
             widget.destroy()
@@ -250,7 +240,7 @@ class Multiple:
         back_button.place(x=10, y=10)
 
         # Create the list itself
-        columns = ("title", "author", "is_loaned", "copies", "genre", "year", "book_ID", "popularity", "availability")
+        columns = ("title", "author", "is_loaned", "copies", "genre", "year", "book_ID", "popularity", "availability", "waiting_list")
         tree = ttk.Treeview(self.root, columns=columns, show="headings")
         tree.pack(fill="both", expand=True, pady=20)
 
@@ -268,6 +258,7 @@ class Multiple:
                 next(reader)  # Skip the header row
                 for row in reader:
                     tree.insert("", "end", values=row)
+
         except FileNotFoundError:
             error_label = Label(self.root, text="Error: books.csv not found!", bg="powderblue", fg="red",
                                 font=('bold', '15'))
@@ -358,6 +349,14 @@ class Multiple:
         )
         submit_button.place(x=220, y=y_offset)
 
+    def register(self, username, password, role, full_name, email, phone_number):
+        librarian = Librarian(self.file_manager)
+        try:
+            librarian.register(username, password, role, full_name, email, phone_number)
+            self.write_to_log(f"registered successfully")
+        except Exception as e:
+            self.write_to_log(f"registration failed")
+
     # Shows the 10 most popular books in order
     def popular_books_page(self):
         for widget in self.root.winfo_children():
@@ -405,14 +404,19 @@ class Multiple:
 
             for _, row in top_10.iterrows():
                 tree.insert("", "end", values=(row['Rank'], row['title']))
-
+            self.write_to_log("Displayed successfully")
             tree.pack(pady=20)
 
         except FileNotFoundError:
             error_label = Label(self.root, text="Error: books.csv not found!", bg="powderblue", fg="red",
                                 font=('Arial', 14))
             error_label.pack(pady=10)
+            self.write_to_log("Displayed failed")
 
+
+    def write_to_log(self, message):
+        with open("log.txt", "a") as log_file:
+            log_file.write(f"- {message}\n")
 
 
 

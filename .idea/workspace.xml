@@ -5,21 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" name="Changes" comment="Third Commit">
+      <change afterPath="$PROJECT_DIR$/Management/Librarian.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Book_Management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Librarian.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Librarian.py" afterDir="false" />
     </list>
-    <list id="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" name="Changes by Matanel" comment="">
-      <change beforePath="$PROJECT_DIR$/Book_Management/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Book_Management/file_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Librarian.py" afterDir="false" />
+    <list id="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" name="Changes by Matanel" comment="Fourth Commit">
+      <change beforePath="$PROJECT_DIR$/Book_Management/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/File_Manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Librarian.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_file_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_librarian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_File_Manager.py" afterDir="false" />
     </list>
     <list id="efa481c3-9cd2-42e5-bef1-f44314b016d5" name="Changes by USER" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,39 +41,34 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/models/Book.py">
+    <file path="$PROJECT_DIR$/GUI/GUI.py">
       <ranges>
-        <range start1="4" end1="5" start2="4" end2="5" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="7" end1="9" start2="7" end2="8" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="11" end1="13" start2="10" end2="12" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="15" end1="16" start2="14" end2="15" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="19" end1="20" start2="18" end2="19" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="21" end1="22" start2="20" end2="21" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="23" end1="24" start2="22" end2="22" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="30" end1="33" start2="28" end2="28" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="34" end1="35" start2="29" end2="30" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="39" end1="55" start2="34" end2="37" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="56" end1="97" start2="38" end2="44" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="98" end1="102" start2="45" end2="46" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="0" end1="1" start2="0" end2="0" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="4" end1="5" start2="3" end2="4" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="9" end1="10" start2="8" end2="8" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="140" end1="145" start2="138" end2="138" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="164" end1="169" start2="157" end2="157" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="172" end1="174" start2="160" end2="162" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="240" end1="240" start2="228" end2="230" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="252" end1="253" start2="242" end2="243" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="270" end1="270" start2="260" end2="261" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="360" end1="360" start2="351" end2="359" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="407" end1="408" start2="406" end2="407" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="414" end1="414" start2="413" end2="414" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="415" end1="415" start2="415" end2="419" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/Librarian.py">
+    <file path="$PROJECT_DIR$/models/Book.py">
       <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="51" end1="52" start2="52" end2="53" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="53" end1="53" start2="54" end2="56" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="54" end1="55" start2="57" end2="58" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="57" end1="60" start2="60" end2="60" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="63" end1="64" start2="63" end2="64" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="67" end1="78" start2="67" end2="69" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="84" end1="87" start2="75" end2="76" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="89" end1="92" start2="78" end2="79" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="93" end1="98" start2="80" end2="90" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="100" end1="104" start2="92" end2="93" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="106" end1="110" start2="95" end2="114" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="111" end1="115" start2="115" end2="116" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="116" end1="118" start2="117" end2="132" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
-        <range start1="119" end1="119" start2="133" end2="169" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="1" end1="6" start2="1" end2="2" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="7" end1="7" start2="3" end2="4" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="11" end1="12" start2="8" end2="17" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="14" end1="15" start2="19" end2="20" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="19" end1="20" start2="24" end2="25" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
+        <range start1="21" end1="21" start2="26" end2="27" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="29" end1="30" start2="35" end2="53" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="38" end1="45" start2="61" end2="61" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
+        <range start1="46" end1="46" start2="62" end2="70" changelist="cdd5e296-c5ad-4e59-ab57-e4dd97cfd507" />
       </ranges>
     </file>
   </component>
@@ -86,29 +83,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_book.TestBook.executor": "Run",
-    "Python tests.Python tests for test_book.TestBook.test_add_copy.executor": "Run",
-    "Python tests.Python tests for test_file_manager.TestLibrarian.executor": "Run",
-    "Python tests.Python tests for test_librarian.TestLibrarian.executor": "Run",
-    "Python.Book.executor": "Run",
-    "Python.GUI.executor": "Run",
-    "Python.Librarian.executor": "Run",
-    "Python.Library.executor": "Run",
-    "Python.logger.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/famen/Desktop/Coding Projects/Hamming-Net-Project"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_book.TestBook.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_book.TestBook.test_add_copy.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_file_manager.TestLibrarian.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_librarian.TestLibrarian.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Book.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Librarian.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Library.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logger.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/famen/Desktop/Coding Projects/Hamming-Net-Project&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system\Book_Management" />
       <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system\data" />
       <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system\models" />
       <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system" />
       <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system\Book_Management\data" />
-      <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system\Book_Management" />
     </key>
   </component>
   <component name="RunManager" selected="Python.GUI">
@@ -134,7 +131,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_book.TestBook" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_Book.TestBook" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Library-management-system" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,11 +142,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_book.TestBook&quot;" />
+      <option name="_new_target" value="&quot;tests.test_Book.TestBook&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_book.TestBook.test_add_copy" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_Book.TestBook.test_add_copy" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Library-management-system" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,11 +157,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_book.TestBook.test_add_copy&quot;" />
+      <option name="_new_target" value="&quot;tests.test_Book.TestBook.test_add_copy&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_file_manager.TestLibrarian" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_File_Manager" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Library-management-system" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,11 +172,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_file_manager.TestLibrarian&quot;" />
+      <option name="_new_target" value="&quot;tests.test_File_Manager&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_librarian.TestLibrarian" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_Librarian.TestLibrarian" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Library-management-system" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,17 +187,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_librarian.TestLibrarian&quot;" />
+      <option name="_new_target" value="&quot;tests.test_Librarian.TestLibrarian&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.GUI" />
-        <item itemvalue="Python tests.Python tests for test_librarian.TestLibrarian" />
-        <item itemvalue="Python tests.Python tests for test_file_manager.TestLibrarian" />
-        <item itemvalue="Python tests.Python tests for test_book.TestBook.test_add_copy" />
-        <item itemvalue="Python tests.Python tests for test_book.TestBook" />
+        <item itemvalue="Python tests.Python tests for tests.test_Librarian.TestLibrarian" />
+        <item itemvalue="Python tests.Python tests for tests.test_File_Manager" />
+        <item itemvalue="Python tests.Python tests for tests.test_Book.TestBook.test_add_copy" />
+        <item itemvalue="Python tests.Python tests for tests.test_Book.TestBook" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737482304734</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fourth Commit">
+      <option name="closed" value="true" />
+      <created>1737586056962</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1737586056962</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,6 +283,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Second Commit" />
     <MESSAGE value="Third Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third Commit" />
+    <MESSAGE value="Fourth Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourth Commit" />
   </component>
 </project>
