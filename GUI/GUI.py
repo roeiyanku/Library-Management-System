@@ -54,8 +54,7 @@ class Multiple:
         title = Label(self.root, text="Librarian Page", bg="powderblue", font=('bold', '25'))
         title.pack()
 
-        back_button = Button(self.root, text="Back", command=self.home_page)
-        back_button.place(x=10, y=10)
+
 
         # Add Book Button
         add_book_button = Button(self.root, text="Add Book", command=self.add_book_page)
@@ -76,7 +75,7 @@ class Multiple:
             text="View Books",
             command=lambda: [
                 self.view_books_page(),
-                File_Manager.write_to_log(self,"Displayed all books successfully")
+                File_Manager.write_to_log("Displayed all books successfully")
             ]
         )
 
@@ -91,7 +90,10 @@ class Multiple:
         return_book_button.place(x=220, y=300)
 
         # Logout Button
-        logout_button = Button(self.root, text="Logout", command=self.home_page)
+        logout_button = Button(self.root, text="Logout", command=lambda: [
+                self.home_page,
+                File_Manager.write_to_log("log out successfully")
+            ] )
         logout_button.place(x=220, y=420)
 
         # Register Button

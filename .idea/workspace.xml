@@ -7,15 +7,10 @@
     <list default="true" id="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" name="Changes" comment="Fifth Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Management/File_Manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/File_Manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Management/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/Librarian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/available_book.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/loaned_books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/log.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
     </list>
     <list id="efa481c3-9cd2-42e5-bef1-f44314b016d5" name="Changes by USER" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -253,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737722903488</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fifth Commit">
+      <option name="closed" value="true" />
+      <created>1737734939658</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737734939658</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

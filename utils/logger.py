@@ -1,9 +1,12 @@
+from tkinter import messagebox
+
 import pandas as pd
 import os
 import hashlib
 from tkinter import *
 from datetime import datetime
 
+from Management.File_Manager import File_Manager
 
 # File path for the users CSV
 users_csv_path = os.path.join('../data/users.csv')
@@ -24,6 +27,7 @@ def login_required(func):
         for index, row in df.iterrows():
             if row['username'].strip() == username and row["password"].strip() == password_hash:
                 # Call the original function with user role
+                File_Manager.write_to_log("log in successfully")
 
                 # Add login notification
                 current_time = datetime.utcnow().strftime('%Y-%m-%d')
@@ -34,7 +38,11 @@ def login_required(func):
 
 
         # If login fails
-        print("Invalid username or password")
+        messagebox.showinfo("log in fail")
+
+        File_Manager.write_to_log("log in fail")
+
+
         return None
     return wrapper
 

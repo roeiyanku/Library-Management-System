@@ -6,6 +6,8 @@ from tkinter import messagebox
 import models
 from models import Book
 from Management import File_Manager
+from Management.File_Manager import File_Manager
+
 
 
 class Librarian:
@@ -49,6 +51,7 @@ class Librarian:
                 user_details["email"],
                 user_details["phone_number"]
             ])
+            File_Manager.write_to_log("registered successfully")
 
     def writelog(message, file_manager=None):
         file_manager.write_to_log(message)
@@ -57,9 +60,8 @@ class Librarian:
     def add_book(title, author, copies, genre, year):
         csv_path = os.path.join('../data/books.csv')
 
-        # User details as a dictionary
+        # Book details as a dictionary
         book_details = {
-            # title,author,is_loaned,copies,genre,year,book_ID,popularity,availability,waiting_list
             "title": title,
             "author": author,
             "is_loaned": "No",
@@ -71,49 +73,62 @@ class Librarian:
             "availability": 0,  # Provide a value for availability
             "waiting_list": ""
         }
+
         if copies == 0:
             File_Manager.write_to_log("book added fail")
             messagebox.showinfo("book added fail")
-
-
         else:
-            # Append the new user's data
-            with open(csv_path, mode="a", newline="", encoding="utf-8") as file:
+            try:
+                books = []
                 book_found = False
 
                 # Open the CSV file for reading
-                reader = csv.DictReader(file)
-                fieldnames = reader.fieldnames  # Automatically get all fieldnames from the CSV header
+                with open(csv_path, mode="r", newline="", encoding="utf-8") as file:
+                    reader = csv.DictReader(file)
+                    fieldnames = reader.fieldnames  # Automatically get all fieldnames from the CSV header
 
-                # Iterate over each row using the DictReader iterator
-                for row in reader:
-                    if row['title'] == title and row["author"] == author:
-                        row['copies'] = str(int(row['copies']) + copies)
-                        File_Manager.notify_add_book(title)
+                    # Ensure 'book_Id' is in the fieldnames list
+                    if 'book_Id' not in fieldnames:
+                        fieldnames.append('book_Id')  # Add 'book_Id' if it's missing
 
-                        File_Manager.write_to_log("book added successfully")
+                    # Iterate over each row using the DictReader iterator
+                    for row in reader:
+                        if row['title'] == title and row["author"] == author:
+                            # Update the number of copies if the book already exists
+                            row['copies'] = str(int(row['copies']) + copies)
+                            File_Manager.notify_add_book(title)
+                            File_Manager.write_to_log("book added successfully")
+                            book_found = True
+                        books.append(row)  # Store the row
 
-                        book_found = True
-                        #if waiting list is >0:
-                        #call lend book
+                # If the book wasn't found, add it to the books list
+                if not book_found:
+                    books.append(book_details)
+
+                # Write the updated list of books back to the file
+                with open(csv_path, mode="w", newline="", encoding="utf-8") as file:
+                    writer = csv.DictWriter(file, fieldnames=fieldnames)
+                    writer.writeheader()  # Write the header
+                    writer.writerows(books)  # Write all books
 
                 if not book_found:
-                    writer = csv.writer(file)
-                    writer.writerow([
-                        book_details["title"],
-                        book_details["author"],
-                        book_details["copies"],
-                        book_details["genre"],
-                        book_details["year"],
-                        book_details["book_ID"],
-                        book_details["popularity"],
-                        book_details["availability"],
-                        book_details["waiting_list"]
-                    ])
-
-                    File_Manager.notify_add_book(title)
+                    #File_Manager.notify_add_book(title)
                     File_Manager.write_to_log("book added successfully")
                     messagebox.showinfo("book added successfully")
+            except FileNotFoundError:
+                # If the CSV file does not exist, create it and write the new book details
+                fieldnames = [
+                    "title", "author", "is_loaned", "copies", "genre",
+                    "year", "book_Id", "popularity", "availability", "waiting_list"
+                ]
+                with open(csv_path, mode="w", newline="", encoding="utf-8") as file:
+                    writer = csv.DictWriter(file, fieldnames=fieldnames)
+                    writer.writeheader()  # Write the header row
+                    writer.writerow(book_details)  # Write the new book
+
+                File_Manager.notify_add_book(title)
+                File_Manager.write_to_log("book added successfully")
+                messagebox.showinfo("book added successfully")
 
     @staticmethod
     def remove_book(book_ID):
@@ -184,11 +199,13 @@ class Librarian:
 
             File_Manager.notify_book_available(row["title"])
             File_Manager.write_to_log("Book returned successfully")
+            messagebox.showinfo("book returned successfully")
 
             # Check waiting list and notify next user
             Librarian.File_Manager.remove_from_waiting_list(book_ID)
-        except Exception as e:
-            File_Manager.write_to_log(f"Book return failed: {e}")
+        except:
+            messagebox.showinfo("book returned fail")
+            File_Manager.write_to_log(f"Book return fail")
 
     @staticmethod
     def lend_book(username, book_ID):
@@ -207,17 +224,16 @@ class Librarian:
                         if row['availability'] > 0:
                             row['popularity'] = str(int(row['popularity']) + 1)  # Increase Popularity
                             row['availability'] = str(int(row['availability']) - 1)  # Increase availability
-                            File_Manager.write_to_log("book borrowed succesful")
+                            File_Manager.write_to_log("book borrowed successfully")
+                            messagebox.showinfo("book borrowed successfully")
 
                             book_found = True
                         books.append(row)  # Store the updated row
 
             if not book_found:
                 File_Manager.write_to_log("book borrowed fail")
-
                 Librarian.add_to_waiting_list(username, book_ID)
-
-                raise ValueError(f"Book with ID {book_ID} not found or already returned.")
+                messagebox.showinfo("book borrowed fail")
 
             # Write updated rows back to the same CSV file
             with open(csv_path, mode='w', newline='', encoding='utf-8') as file:
@@ -227,8 +243,8 @@ class Librarian:
 
             File_Manager.notify_book_available(row["title"])
 
-        except Exception as e:
-            File_Manager.write_to_log(f"Book return failed: {e}")
+        except:
+            messagebox.showinfo("book borrowed fail")
 
     def add_to_waiting_list(username, book_ID):
         books = File_Manager.get_books()
@@ -262,8 +278,6 @@ class Librarian:
                         # Convert list back to string format
                         book["waiting_list"] = "|".join(waiting_list)
 
-                        # Update the file
-                        self.sync_books(books)
 
                         # Send notification to user
                         self.File_Manager.add_notification_to_user(removed_user,
