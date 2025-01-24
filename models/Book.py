@@ -27,11 +27,6 @@ class Book:
         self.availability = self.initialize_availability()
 
     # Get the next ID and increment the counter
-    @classmethod
-    def get_next_ID(cls):
-        next_ID = cls.ID_counter
-        cls.ID_counter += 1
-        return next_ID
 
     def initialize_availability(self):
         if self.is_loaned == "No":
@@ -51,6 +46,7 @@ class Book:
         self.availability = new_availability
 
         # Increases popularity by 1.
+
     def increase_popularity(self):
         self.popularity += 1
         return self.popularity
@@ -62,8 +58,11 @@ class Book:
         self.copies += new_copies
         self.availability += new_copies
 
-
     def get_waiting_list(self):
         return self.waiting_list.split("|") if self.waiting_list else []
 
 
+def get_next_ID():
+    next_ID = Book.ID_counter  # Accessing the class variable
+    Book.ID_counter += 1  # Incrementing the class variable
+    return next_ID

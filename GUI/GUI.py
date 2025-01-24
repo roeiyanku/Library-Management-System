@@ -54,9 +54,13 @@ class Multiple:
         title = Label(self.root, text="Librarian Page", bg="powderblue", font=('bold', '25'))
         title.pack()
 
+        back_button = Button(self.root, text="Back", command=self.home_page)
+        back_button.place(x=10, y=10)
+
         # Add Book Button
         add_book_button = Button(self.root, text="Add Book", command=self.add_book_page)
         add_book_button.place(x=220, y=100)
+
 
         # Remove Book Button
         remove_book_button = Button(self.root, text="Remove Book", command=self.remove_book_page)
@@ -67,7 +71,15 @@ class Multiple:
         search_book_button.place(x=220, y=180)
 
         # View Books Button
-        view_books_button = Button(self.root, text="View Books", command=self.view_books_page)
+        view_books_button = Button(
+            self.root,
+            text="View Books",
+            command=lambda: [
+                self.view_books_page(),
+                File_Manager.write_to_log(self,"Displayed all books successfully")
+            ]
+        )
+
         view_books_button.place(x=220, y=220)
 
         # Lend Book Button
@@ -78,12 +90,8 @@ class Multiple:
         return_book_button = Button(self.root, text="Return Book", command=self.return_book_page)
         return_book_button.place(x=220, y=300)
 
-        # Notifications Button
-        notifications_button = Button(self.root, text="My Notifications", command=self.notifications_page)
-        notifications_button.place(x=220, y=460)
-
         # Logout Button
-        logout_button = Button(self.root, text="Logout", command=lambda: logger.logout_Function(self))
+        logout_button = Button(self.root, text="Logout", command=self.home_page)
         logout_button.place(x=220, y=420)
 
         # Register Button
@@ -115,9 +123,6 @@ class Multiple:
 
         author_entry = Entry(self.root)
         author_entry.place(x=200, y=80)
-
-        notifications_button = Button(self.root, text="My Notifications", command=self.notifications_page)
-        notifications_button.place(x=220, y=460)
 
         librarian_submit = Button(self.root, text="Submit")
         librarian_submit.place(x=220, y=400)
@@ -168,46 +173,16 @@ class Multiple:
 
         # Submit button
         librarian_submit = Button(self.root, text="Submit",
-                                  command=lambda: self.add_book_and_notify(
+                                  command=lambda: Librarian.add_book(
+                                      #title, author, copies, genre, year
                                       book_entry.get(),
                                       author_entry.get(),
                                       copies_entry.get(),
                                       genre_entry.get(),
-                                      year_entry.get(),
-                                      [book_entry, author_entry, copies_entry, genre_entry, year_entry]
+                                      year_entry.get()
+
                                   ))
         librarian_submit.pack(pady=10)
-
-    def add_book_and_notify(self, title, author, copies, genre, year, entries_to_clear):
-        try:
-            # Get values and convert as needed
-            title = title.strip()
-            author = author.strip()
-            copies = int(copies.strip())
-            genre = genre.strip()
-            year = int(year.strip())
-
-            # Add the book using the librarian instance
-            success = self.librarian.add_book(
-                title=title,
-                author=author,
-                copies=copies,
-                genre=genre,
-                year=year
-            )
-
-            if success:
-                messagebox.showinfo("Success", f"Book '{title}' added successfully!")
-                # Clear the entries
-                for entry in entries_to_clear:
-                    entry.delete(0, END)
-            else:
-                messagebox.showerror("Error", "Failed to add book!")
-
-        except ValueError:
-            messagebox.showerror("Error", "Please enter valid numbers for copies and year!")
-        except Exception as e:
-            messagebox.showerror("Error", f"Failed to add book: {str(e)}")
 
     def remove_book_page(self):
         for widget in self.root.winfo_children():
@@ -274,43 +249,6 @@ class Multiple:
 
         tree.place(x=20, y=150)
 
-    def notifications_page(self):
-        for widget in self.root.winfo_children():
-            widget.destroy()
-
-        title = Label(self.root, text="My Notifications", bg="powderblue", font=('bold', '25'))
-        title.pack()
-
-        back_button = Button(self.root, text="Back",
-                             command=self.librarian_page)
-        back_button.place(x=10, y=10)
-
-        # Create Treeview for notifications
-        columns = ["Time", "Message"]
-        tree = ttk.Treeview(self.root, columns=columns, show="headings", height=15)
-
-        # Configure columns
-        tree.heading("Time", text="Time")
-        tree.heading("Message", text="Message")
-        tree.column("Time", width=150)
-        tree.column("Message", width=400)
-
-        # Add scrollbar
-        scrollbar = ttk.Scrollbar(self.root, orient="vertical", command=tree.yview)
-        tree.configure(yscrollcommand=scrollbar.set)
-
-        # Position the treeview and scrollbar
-        tree.pack(pady=50, padx=20, side="left", fill="both", expand=True)
-        scrollbar.pack(pady=50, side="right", fill="y")
-
-        # Get and display notifications
-        if self.current_user:
-            notifications = self.file_manager.get_user_notifications(self.current_user)
-            for notification in notifications:
-                if notification:  # Check if notification is not empty
-                    tree.insert("", "end", values=("", notification))
-
-
     def view_books_page(self):
         for widget in self.root.winfo_children():
             widget.destroy()
@@ -356,15 +294,27 @@ class Multiple:
         back_button = Button(self.root, text="Back", command=self.librarian_page)
         back_button.place(x=10, y=10)
 
-        # Entry label
+        # Entry label for Book ID
         book_id_label = Label(self.root, text="Enter Book ID to lend:", font=('bold', 12))
-        book_id_label.pack(pady=10)
+        book_id_label.pack(pady=5)  # Vertical spacing for the Book ID label
 
         # Entry field for Book ID
         book_id_entry = Entry(self.root, width=30, font=('bold', 12))
-        book_id_entry.pack(pady=10)
+        book_id_entry.pack(pady=5)  # Vertical spacing for the Book ID entry
 
-        submit_button = Button(self.root, text="Submit", command=lambda: Librarian.lend_book(
+        # Add some space before the next row
+        Label(self.root, text="", font=('bold', 12)).pack(pady=20)  # Empty label for spacing
+
+        # Entry label for username
+        username_label = Label(self.root, text="Enter username to lend:", font=('bold', 12))
+        username_label.pack(pady=5)  # Vertical spacing for the Username label
+
+        # Entry field for username
+        username_entry = Entry(self.root, width=30, font=('bold', 12))
+        username_entry.pack(pady=5)  # Vertical spacing for the Username entry
+        # Place the entry next to the label
+
+        submit_button = Button(self.root, text="Submit", command=lambda: Librarian.lend_book( username_entry.get(),
             book_id_entry.get()), font=('bold', 12))
         submit_button.pack(pady=10)
 
@@ -435,9 +385,9 @@ class Multiple:
         librarian = Librarian(self.file_manager)
         try:
             librarian.register(username, password, role, full_name, email, phone_number)
-            self.write_to_log(f"registered successfully")
+            File_Manager.write_to_log(f"registered successfully")
         except Exception as e:
-            self.write_to_log(f"registration failed")
+            File_Manager.write_to_log(f"registration failed")
 
     # Shows the 10 most popular books in order
     def popular_books_page(self):
@@ -486,19 +436,16 @@ class Multiple:
 
             for _, row in top_10.iterrows():
                 tree.insert("", "end", values=(row['Rank'], row['title']))
-            self.write_to_log("Displayed successfully")
+            File_Manager.write_to_log("Displayed successfully")
             tree.pack(pady=20)
 
         except FileNotFoundError:
             error_label = Label(self.root, text="Error: books.csv not found!", bg="powderblue", fg="red",
                                 font=('Arial', 14))
             error_label.pack(pady=10)
-            self.write_to_log("Displayed failed")
+            File_Manager.write_to_log("Displayed failed")
 
 
-    def write_to_log(self, message):
-        with open("log.txt", "a") as log_file:
-            log_file.write(f"- {message}\n")
 
 
 

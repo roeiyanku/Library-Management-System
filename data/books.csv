@@ -1,6 +1,6 @@
 title,author,is_loaned,copies,genre,year,book_ID,popularity,availability,waiting_list
 The Catcher in the Rye,J.D. Salinger,No,3,Fiction,1951,1000,0,3,
-To Kill a Mockingbird,Harper Lee,No,2,Fiction,1960,1001,2,0,
+To Kill a Mockingbird,Harper Lee,No,2,Fiction,1960,1001,2,1,
 1984,George Orwell,Yes,5,Dystopian,1949,1002,5,0,
 The Great Gatsby,F. Scott Fitzgerald,No,4,Classic,1925,1003,0,4,
 Moby Dick,Herman Melville,No,1,Adventure,1851,1004,0,1,

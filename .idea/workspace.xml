@@ -4,29 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" name="Changes" comment="Fourth Commit">
-      <change afterPath="$PROJECT_DIR$/Observers/Subject.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <list default="true" id="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" name="Changes" comment="Fifth Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Management/File_Manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/File_Manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Management/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/Librarian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
-    </list>
-    <list id="15c494f9-848f-4622-af45-429f11ea26cb" name="Changes by Matanel" comment="">
-      <change afterPath="$PROJECT_DIR$/Observers/Observer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Observers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_Observer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_Subject.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Management/File_Manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/File_Manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Management/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/Librarian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/available_book.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/loaned_books.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/log.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <list id="efa481c3-9cd2-42e5-bef1-f44314b016d5" name="Changes by USER" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,73 +33,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Management/Librarian.py">
-      <ranges>
-        <range start1="72" end1="72" start2="72" end2="73" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="73" end1="74" start2="74" end2="75" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="79" end1="79" start2="80" end2="81" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="80" end1="80" start2="82" end2="84" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="83" end1="84" start2="87" end2="92" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="85" end1="86" start2="93" end2="94" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="97" end1="97" start2="105" end2="141" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="129" end1="131" start2="173" end2="176" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="132" end1="136" start2="177" end2="208" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="137" end1="139" start2="209" end2="210" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="140" end1="143" start2="211" end2="211" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="145" end1="146" start2="213" end2="214" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="147" end1="148" start2="215" end2="215" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="156" end1="157" start2="223" end2="223" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="160" end1="165" start2="226" end2="234" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="167" end1="167" start2="236" end2="240" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="175" end1="176" start2="248" end2="249" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="180" end1="191" start2="253" end2="284" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="192" end1="192" start2="285" end2="292" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/Management/File_Manager.py">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="4" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="6" end1="6" start2="7" end2="8" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="12" end1="12" start2="14" end2="15" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="15" end1="15" start2="18" end2="19" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="35" end1="35" start2="39" end2="89" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="85" end1="85" start2="139" end2="143" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="101" end1="102" start2="159" end2="160" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/utils/logger.py">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="6" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="22" end1="23" start2="24" end2="25" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="24" end1="24" start2="26" end2="32" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="25" end1="25" start2="33" end2="34" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="39" end1="39" start2="48" end2="49" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/models/Book.py">
-      <ranges>
-        <range start1="63" end1="63" start2="63" end2="64" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="65" end1="66" start2="66" end2="67" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="67" end1="70" start2="68" end2="68" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/GUI/GUI.py">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="3" end1="3" start2="3" end2="4" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="16" end1="16" start2="17" end2="20" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="27" end1="28" start2="31" end2="32" changelist="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" />
-        <range start1="76" end1="76" start2="80" end2="84" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="77" end1="78" start2="85" end2="86" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="110" end1="110" start2="118" end2="121" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="157" end1="158" start2="168" end2="168" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="159" end1="162" start2="169" end2="178" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="164" end1="164" start2="180" end2="211" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-        <range start1="229" end1="229" start2="276" end2="311" changelist="15c494f9-848f-4622-af45-429f11ea26cb" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -243,8 +165,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_Book.TestBook" />
         <item itemvalue="Python.GUI" />
+        <item itemvalue="Python tests.Python tests for test_Book.TestBook" />
         <item itemvalue="Python.logger" />
         <item itemvalue="Python tests.Python tests for test_Observer.TestObserver" />
         <item itemvalue="Python tests.Python tests for tests.test_Librarian.TestLibrarian" />
@@ -323,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737655146709</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fifth Commit">
+      <option name="closed" value="true" />
+      <created>1737722903488</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737722903488</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -342,17 +272,7 @@
     <MESSAGE value="Second Commit" />
     <MESSAGE value="Third Commit" />
     <MESSAGE value="Fourth Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth Commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Management/File_Manager.py</url>
-          <line>162</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fifth Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fifth Commit" />
   </component>
 </project>

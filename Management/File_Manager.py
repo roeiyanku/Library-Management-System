@@ -9,8 +9,7 @@ class File_Manager:
     def __init__(self):
         # Initialize file management department.
         self.books_file = os.path.join("..", "data", "books.csv")
-        self.available_books_file = os.path.join("..", "data", "available_books.csv")
-        self.loaned_books_file = os.path.join("..", "data", "loaned_books.csv")
+
         self.users_file = os.path.join("..", "data", "users.csv")
         self.observers = {}
 
@@ -135,11 +134,8 @@ class File_Manager:
                 user_details["email"],
                 user_details["phone_number"]
             ])
-        self.write_to_log("User registered successfully")
+        File_Manager.write_to_log("User registered successfully")
 
-    def write_to_log(self,message):
-            with open("log.txt", "a") as log_file:
-                log_file.write(f"- {message}\n")
 
     # Return all books from books.csv.
     def get_books(self):
@@ -159,7 +155,10 @@ class File_Manager:
     def sync_users(self, users):
         self.write_csv(self.users_file, users, ["username", "password", "role", "full_name", "email", "phone_number", "notifications"])
 
+    @staticmethod
+    def write_to_log(message):
+        with open("log.txt", "a") as log_file:
+            log_file.write(f"- {message}\n")
 
-def write_to_log(message):
-    with open("log.txt", "a") as log_file:
-        log_file.write(f"- {message}\n")
+
+
