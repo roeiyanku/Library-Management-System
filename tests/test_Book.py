@@ -3,10 +3,10 @@ from models.Book import Book
 
 class TestBook(unittest.TestCase):
     def setUp(self):
-        self.book = Book("Python", "roi&matanel","No", 5, "Fantasy", 2025,5)
+        self.book = Book("Book", "roi&matanel", 5, "Fantasy", 2025,5)
 
     def test_initialization(self): #Checking initialization of the object.
-        self.assertEqual(self.book.title, "Python")
+        self.assertEqual(self.book.title, "Book")
         self.assertEqual(self.book.author, "roi&matanel")
         self.assertEqual(self.book.is_loaned, "No")
         self.assertEqual(self.book.copies, 5)
@@ -40,8 +40,8 @@ class TestBook(unittest.TestCase):
             self.book.add_copy(0)
 
     def test_initialize_availability(self):
-        book1 = Book("Python", "roi&matanel","Yes", 5, "Fantasy", 2025,0)
-        self.assertEqual(book1.availability, 0)
+        book1 = Book("Book1", "roi&matanel" ,5,"Fantasy", 2025,5)
+        self.assertEqual(book1.availability, 5)
 
     def test_update_availability(self):
         self.book.update_availability(-3)
@@ -57,10 +57,16 @@ class TestBook(unittest.TestCase):
             self.book.update_availability(-6)
 
     def test_waiting_list(self):
+        # Test empty waiting list
         self.assertEqual(self.book.get_waiting_list(), [])
-        test_list = ["User1", "User2"]
-        self.book.set_waiting_list(test_list)
-        self.assertEqual(self.book.get_waiting_list(), test_list)
+
+        # Test waiting list with one user
+        self.book.waiting_list = "User1"
+        self.assertEqual(self.book.get_waiting_list(), ["User1"])
+
+        # Test waiting list with multiple users
+        self.book.waiting_list = "User1|User2"
+        self.assertEqual(self.book.get_waiting_list(), ["User1", "User2"])
 
 if __name__ == '__main__':
     unittest.main()

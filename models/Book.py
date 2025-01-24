@@ -62,10 +62,8 @@ class Book:
         self.copies += new_copies
         self.availability += new_copies
 
-    def get_waiting_list(self):
-        return self.waiting_list
 
-    def set_waiting_list(self, waiting_list: list):
-        self.waiting_list = waiting_list
-        print("Waiting list updated successfully.")
+    def get_waiting_list(self):
+        return self.waiting_list.split("|") if self.waiting_list else []
+
 

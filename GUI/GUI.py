@@ -1,6 +1,7 @@
-from tkinter import ttk
+from tkinter import ttk, messagebox
 from tkinter import *
 
+from Management.File_Manager import File_Manager
 from Management.Librarian import Librarian
 import pandas as pd
 from utils import logger
@@ -14,6 +15,9 @@ class Multiple:
         self.root.geometry("600x600")
         self.root.title("Matanel and Roei's Library")
         self.root.config(bg="powderblue")
+        self.file_manager = File_Manager()
+        self.librarian = Librarian(self.file_manager)
+        self.current_user = None
 
         self.home_page()
 
@@ -25,7 +29,7 @@ class Multiple:
         title = Label(self.root, text="Login Page", bg="powderblue", font=('bold', '25'))
         title.pack()
 
-        username = Label(self.root, text="UserName:", bg="powderblue", font=('bold', '15'))
+        username = Label(self.root, text="Username:", bg="powderblue", font=('bold', '15'))
         username.place(x=20, y=60)
 
         password = Label(self.root, text="Password:", bg="powderblue", font=('bold', '15'))
@@ -74,8 +78,12 @@ class Multiple:
         return_book_button = Button(self.root, text="Return Book", command=self.return_book_page)
         return_book_button.place(x=220, y=300)
 
+        # Notifications Button
+        notifications_button = Button(self.root, text="My Notifications", command=self.notifications_page)
+        notifications_button.place(x=220, y=460)
+
         # Logout Button
-        logout_button = Button(self.root, text="Logout", command=self.home_page)
+        logout_button = Button(self.root, text="Logout", command=lambda: logger.logout_Function(self))
         logout_button.place(x=220, y=420)
 
         # Register Button
@@ -107,6 +115,9 @@ class Multiple:
 
         author_entry = Entry(self.root)
         author_entry.place(x=200, y=80)
+
+        notifications_button = Button(self.root, text="My Notifications", command=self.notifications_page)
+        notifications_button.place(x=220, y=460)
 
         librarian_submit = Button(self.root, text="Submit")
         librarian_submit.place(x=220, y=400)
@@ -155,12 +166,48 @@ class Multiple:
         year_entry = Entry(self.root, font=('Arial', 10))
         year_entry.pack(fill='x', padx=20, pady=5)
 
-
         # Submit button
-        librarian_submit = Button(self.root, text="Submit", command=lambda: Librarian.add_book((
-            book_entry.get(), author_entry.get(), copies_entry.get(),
-            genre_entry.get(), year_entry.get() )))
+        librarian_submit = Button(self.root, text="Submit",
+                                  command=lambda: self.add_book_and_notify(
+                                      book_entry.get(),
+                                      author_entry.get(),
+                                      copies_entry.get(),
+                                      genre_entry.get(),
+                                      year_entry.get(),
+                                      [book_entry, author_entry, copies_entry, genre_entry, year_entry]
+                                  ))
         librarian_submit.pack(pady=10)
+
+    def add_book_and_notify(self, title, author, copies, genre, year, entries_to_clear):
+        try:
+            # Get values and convert as needed
+            title = title.strip()
+            author = author.strip()
+            copies = int(copies.strip())
+            genre = genre.strip()
+            year = int(year.strip())
+
+            # Add the book using the librarian instance
+            success = self.librarian.add_book(
+                title=title,
+                author=author,
+                copies=copies,
+                genre=genre,
+                year=year
+            )
+
+            if success:
+                messagebox.showinfo("Success", f"Book '{title}' added successfully!")
+                # Clear the entries
+                for entry in entries_to_clear:
+                    entry.delete(0, END)
+            else:
+                messagebox.showerror("Error", "Failed to add book!")
+
+        except ValueError:
+            messagebox.showerror("Error", "Please enter valid numbers for copies and year!")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to add book: {str(e)}")
 
     def remove_book_page(self):
         for widget in self.root.winfo_children():
@@ -227,6 +274,41 @@ class Multiple:
 
         tree.place(x=20, y=150)
 
+    def notifications_page(self):
+        for widget in self.root.winfo_children():
+            widget.destroy()
+
+        title = Label(self.root, text="My Notifications", bg="powderblue", font=('bold', '25'))
+        title.pack()
+
+        back_button = Button(self.root, text="Back",
+                             command=self.librarian_page)
+        back_button.place(x=10, y=10)
+
+        # Create Treeview for notifications
+        columns = ["Time", "Message"]
+        tree = ttk.Treeview(self.root, columns=columns, show="headings", height=15)
+
+        # Configure columns
+        tree.heading("Time", text="Time")
+        tree.heading("Message", text="Message")
+        tree.column("Time", width=150)
+        tree.column("Message", width=400)
+
+        # Add scrollbar
+        scrollbar = ttk.Scrollbar(self.root, orient="vertical", command=tree.yview)
+        tree.configure(yscrollcommand=scrollbar.set)
+
+        # Position the treeview and scrollbar
+        tree.pack(pady=50, padx=20, side="left", fill="both", expand=True)
+        scrollbar.pack(pady=50, side="right", fill="y")
+
+        # Get and display notifications
+        if self.current_user:
+            notifications = self.file_manager.get_user_notifications(self.current_user)
+            for notification in notifications:
+                if notification:  # Check if notification is not empty
+                    tree.insert("", "end", values=("", notification))
 
 
     def view_books_page(self):
