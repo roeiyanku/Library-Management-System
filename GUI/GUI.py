@@ -1,10 +1,11 @@
 from tkinter import ttk, messagebox
 from tkinter import *
 
+import utils
 from Management.File_Manager import File_Manager
 from Management.Librarian import Librarian
 import pandas as pd
-from utils import logger
+from utils import logger, search_manager
 import csv
 import os
 
@@ -89,11 +90,10 @@ class Multiple:
         return_book_button = Button(self.root, text="Return Book", command=self.return_book_page)
         return_book_button.place(x=220, y=300)
 
-        # Logout Button
-        logout_button = Button(self.root, text="Logout", command=lambda: [
-                self.home_page,
-                File_Manager.write_to_log("log out successfully")
-            ] )
+        logout_button = Button(self.root, text="Logout", command=lambda: (
+            self.home_page(),  # First navigate to the home page
+            File_Manager.write_to_log("log out successfully")  # Then log the message
+        ))
         logout_button.place(x=220, y=420)
 
         # Register Button
@@ -233,15 +233,12 @@ class Multiple:
         search_criteria = StringVar()
         search_criteria.set("Title")  # Default option
         dropdown = ttk.Combobox(self.root, textvariable=search_criteria, state="readonly",
-                                values=["Title", "Author", "Genre", "Year", "Book ID", "Availability"])
+                                values=["Title", "Author", "Genre", "Year", "Available Books", "Loaned Books"])
         dropdown.place(x=100, y=110)
 
-        # Search Button
-        search_button = Button(self.root, text="Search")
-        search_button.place(x=400, y=110)
-
         # Treeview for Displaying Search Results
-        columns = ("Title", "Author", "Genre", "Year", "Book ID", "Availability")
+        columns = ("Title", "Author", "Genre", "is_loaned", "copies", "genre","Year", "Book ID", "Availability", "popularity", "availability", "waiting_list")
+
         tree = ttk.Treeview(self.root, columns=columns, show="headings", height=15)
 
         # Define Columns
@@ -250,6 +247,26 @@ class Multiple:
             tree.column(col, width=120)
 
         tree.place(x=20, y=150)
+
+        # Function to update Treeview with search results
+        def update_treeview():
+            # Clear the previous results in the Treeview
+            for item in tree.get_children():
+                tree.delete(item)
+
+            # Perform the search and get the results
+            search_query = search_entry.get()
+            search_criteria_value = search_criteria.get()
+            results = utils.search_manager.SearchManager.perform_search(search_query, search_criteria_value)
+
+            # Insert new results into the Treeview
+            for book in results:
+                tree.insert("", "end", values=(
+                book["title"], book["author"], book["is_loaned"], book["copies"],book["genre"], book["year"], book["book_ID"],book["popularity"], book["availability"],book["waiting_list"]))
+
+        # Search Button
+        search_button = Button(self.root, text="Search", command=update_treeview)
+        search_button.place(x=400, y=110)
 
     def view_books_page(self):
         for widget in self.root.winfo_children():

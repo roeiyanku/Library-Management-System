@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8db56cb-165c-4cb1-ad7d-9f9af372edb5" name="Changes" comment="Fifth Commit">
+      <change afterPath="$PROJECT_DIR$/utils/search_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Management/File_Manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/File_Manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Management/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Management/Librarian.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
     </list>
     <list id="efa481c3-9cd2-42e5-bef1-f44314b016d5" name="Changes by USER" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -40,25 +42,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_Book.TestBook.executor": "Run",
-    "Python tests.Python tests for test_Observer.TestObserver.executor": "Run",
-    "Python tests.Python tests for test_book.TestBook.executor": "Run",
-    "Python tests.Python tests for test_book.TestBook.test_add_copy.executor": "Run",
-    "Python tests.Python tests for test_file_manager.TestLibrarian.executor": "Run",
-    "Python tests.Python tests for test_librarian.TestLibrarian.executor": "Run",
-    "Python tests.Python tests in test_Book.py.executor": "Run",
-    "Python.Book.executor": "Run",
-    "Python.GUI.executor": "Run",
-    "Python.Librarian.executor": "Run",
-    "Python.Library.executor": "Run",
-    "Python.logger.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/famen/Desktop/Coding Projects/Hamming-Net-Project"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_Book.TestBook.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_Observer.TestObserver.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_book.TestBook.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_book.TestBook.test_add_copy.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_file_manager.TestLibrarian.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_librarian.TestLibrarian.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_Book.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Book.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Librarian.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Library.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logger.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/famen/Desktop/Coding Projects/Hamming-Net-Project&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\famen\Desktop\Coding Projects\Library-management-system\Book_Management" />
@@ -256,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737734939658</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fifth Commit">
+      <option name="closed" value="true" />
+      <created>1737737171965</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737737171965</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

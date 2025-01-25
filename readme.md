@@ -83,6 +83,7 @@ The Library Management System is designed to manage books, users, and their inte
 
 4. Ensure `books.csv` exists in the correct format for book data.
 
+5. Run the GUI
 ---
 
 ## Dependencies
